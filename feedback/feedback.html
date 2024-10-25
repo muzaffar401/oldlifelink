@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifelink</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="feedback.css" rel="stylesheet">
+    <link rel="icon" href="/titlelogo.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+
+                        <div class="ps-3">
+                            <a href="mailto:lifelink115@gmail.com" class="text-muted small"><i
+                                    class="fas fa-envelope text-primary me-2"></i>lifelink115@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex pe-3">
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://www.facebook.com/profile.php?id=100059563837220&mibextid=ZbWKwL"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://x.com/Muzaffar401?t=5Oo42XPN4flIP3PEomc2Vg&s=09"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://www.instagram.com/muzaffar______ahmed?igsh=MXN5amZzcWU4eDRtZg=="><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://www.linkedin.com/in/muzaffar-ahmed-b8652b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="#" class="navbar-brand p-0">
+                    <h1 class="text-primary mb-0"><i class="fas fa-plus me-2"></i> Lifelink</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-0 mx-lg-auto">
+                        <a href="/index.html" class="nav-item nav-link">Home</a>
+                        <a href="/about-us/about_us.html" class="nav-item nav-link">About</a>
+                        <a href="/services/service.html" class="nav-item nav-link">Services</a>
+                        <a href="/gallery/gallery.html" class="nav-item nav-link">Gallery</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Types of Vehicle</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="/categoryAmbulances/catAmbulance.html" class="dropdown-item">AC</a>
+                                <a href="/categoryAmbulances/catAmbulance.html" class="dropdown-item">NON AC</a>
+                                <a href="/categoryAmbulances/catAmbulance.html" class="dropdown-item">ICU</a>
+                                <a href="/categoryAmbulances/catAmbulance.html" class="dropdown-item">ICCU</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Pages</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="/ambulances/ambulances.html" class="dropdown-item">All Ambulances</a>
+                                <a href="/feedback/feedback.html" class="dropdown-item active">Feedback</a>
+                                <a href="/sitemap/sitemap.html" class="dropdown-item">Site Map</a>
+                                <a href="/faqs/faqs.html" class="dropdown-item">FAQs</a>
+                            </div>
+                        </div>
+                        <a href="/contact-us/contact.html" class="nav-item nav-link">Contact</a>
+                        <div class="nav-btn px-3">
+                            <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0"
+                            data-bs-toggle="modal" data-bs-target="#searchModal"><i
+                                class="fas fa-search"></i></button> -->
+                            <button class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0" id="userAccount"
+                                type="button" onclick="redirectToLogin()">
+                                <i class="fas fa-user-circle"></i> <span id="accountText">Sign Up/Login</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+
+            <!-- Offcanvas Profile Section -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasProfile"
+                aria-labelledby="offcanvasProfileLabel">
+                <div class="offcanvas-header bg-primary text-white">
+                    <h5 id="offcanvasProfileLabel" class="mb-0 text-light">Your Profile</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-center bg-light d-flex flex-column align-items-center">
+                    <!-- Profile Image and Upload Button -->
+                    <div class="position-relative mb-4">
+                        <img id="profileImage" src="/img/user-image-with-black-background.png" alt="Profile Image"
+                            class="rounded-circle border border-3 border-primary shadow"
+                            style="width: 120px; height: 120px;">
+                        <button class="btn btn-sm btn-light rounded-circle position-absolute bottom-0 end-0"
+                            style="border: 1px solid #ccc;" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+
+                    <!-- User Name -->
+                    <h4 id="userName" class="fw-bold text-dark mb-3">John Doe</h4>
+
+                    <!-- Buttons Section -->
+                    <div class="w-100 d-grid gap-2 px-4">
+                        <!-- Change Profile Image Button -->
+                        <button class="btn btn-primary mb-2" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-camera-retro me-2"></i>Change Profile Image
+                        </button>
+                        <input type="file" id="fileInput" accept="image/*" onchange="updateProfileImage()"
+                            style="display: none;">
+
+                        <!-- Logout Button -->
+                        <button class="btn btn-outline-secondary mb-2" onclick="logout()">
+                            <i class="fas fa-door-open me-2"></i>Logout
+                        </button>
+
+                        <!-- Remove Account Button -->
+                        <button class="btn btn-danger mb-2" onclick="removeAccount()">
+                            <i class="fas fa-user-times me-2"></i>Remove Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Modal Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center bg-primary">
+                    <div class="input-group w-75 mx-auto d-flex">
+                        <input type="search" class="form-control p-3" placeholder="keywords"
+                            aria-describedby="search-icon-1">
+                        <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i
+                                class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Search End -->
+
+
+    <div class="" style="width: 100%;">
+        <img src="/about-us/images/banner.jpg" class="img-fluid " alt="" style="width: 100%;">
+    </div>
+
+    <div class="container-fluid contact bg-light py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;"
+                data-aos="fade-down">
+                <h4 class="text-primary">Feedback</h4>
+                <h1 class="display-4 mb-4">If you have any comments, please share them now.</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="contact-img d-flex justify-content-center" data-aos="zoom-in">
+                        <div class="contact-img-inner">
+                            <img src="/img/UXT_User_feedback_01-removebg-preview.png" class="img-fluid w-100"
+                                alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <div>
+                        <h4 class="text-primary">Send Your Message</h4>
+                        <form id="feedbackForm">
+                            <div class="row g-3">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="name"
+                                            placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                        <span class="validation-message" id="nameError"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="phone" class="form-control border-0" id="phone"
+                                            placeholder="Phone">
+                                        <label for="phone">Your Phone</label>
+                                        <span class="validation-message" id="phoneError"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" placeholder="Leave a message here"
+                                            id="message" style="height: 120px"></textarea>
+                                        <label for="message">Message</label>
+                                        <span class="validation-message" id="messageError"></span>
+                                    </div>
+                                </div>
+                                <!-- Rating Section -->
+                                <!-- Rating Section -->
+                                <div class="col-12">
+                                    <label>Rate Your Experience:</label><br>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star" id="star-1" data-value="1"></i>
+                                        <i class="fas fa-star" id="star-2" data-value="2"></i>
+                                        <i class="fas fa-star" id="star-3" data-value="3"></i>
+                                        <i class="fas fa-star" id="star-4" data-value="4"></i>
+                                        <i class="fas fa-star" id="star-5" data-value="5"></i>
+                                    </div>
+                                    <span class="validation-message" id="ratingError"></span>
+                                    <input type="hidden" id="ratingValue" name="rating">
+                                    <!-- Hidden field to store rating -->
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" id="submitBtn"
+                                        type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-6 col-xl-5">
+                                <div class="footer-item">
+                                    <a href="/index.html" class="p-0">
+                                        <h3 class="text-white"><i class="fas fa-plus me-2"></i> Lifelink</h3>
+                                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                                    </a>
+                                    <p class="text-white mb-4">
+                                        LifeLink Ambulance Services offers 24/7 emergency transport with modern
+                                        ambulances and skilled medical staff, ensuring rapid response and safe patient
+                                        care.</p>
+                                    <div class="footer-btn d-flex">
+                                        <a class="btn btn-md-square rounded-circle me-3"
+                                            href="https://www.facebook.com/profile.php?id=100059563837220&mibextid=ZbWKwL"><i
+                                                class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3"
+                                            href="https://x.com/Muzaffar401?t=5Oo42XPN4flIP3PEomc2Vg&s=09"><i
+                                                class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3"
+                                            href="https://www.instagram.com/muzaffar______ahmed?igsh=MXN5amZzcWU4eDRtZg=="><i
+                                                class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-0"
+                                            href="https://www.linkedin.com/in/muzaffar-ahmed-b8652b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                                class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Useful Links</h4>
+                                    <a href="/about-us/about_us.html"><i class="fas fa-angle-right me-2"></i> About
+                                        Us</a>
+                                    <a href="/gallery/gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                                    <a href="/services/service.html"><i class="fas fa-angle-right me-2"></i>
+                                        Services</a>
+                                    <a href="/faqs/faqs.html"><i class="fas fa-angle-right me-2"></i> FAQ's</a>
+                                    <a href="/sitemap/sitemap.html"><i class="fas fa-angle-right me-2"></i> Site Map</a>
+                                    <a href="/contact-us/contact.html"><i class="fas fa-angle-right me-2"></i>
+                                        Contact</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Types of Vehicle</h4>
+                                    <a href="/categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>AC</a>
+                                    <a href="/categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>NON AC</a>
+                                    <a href="/categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>ICU</a>
+                                    <a href="/categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>ICCU</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Newsletter</h4>
+                        <p class="text-white mb-3">Join our newsletter for updates on ambulance services, community
+                            stories, and events. Discover how LifeLink is making a difference in Pakistan and how you
+                            can help!</p>
+                        <div class="position-relative rounded-pill mb-4">
+                            <input id="email-input" class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Enter your email">
+                            <button type="button" id="signup-button"
+                                class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your User ID
+        emailjs.init("eU3wdykStk6PaHL-P"); // Your EmailJS User ID
+
+        // Get references to the input and button elements
+        const emailInput = document.getElementById('email-input'); // Email input field
+        const signupButton = document.getElementById('signup-button'); // Signup button
+
+        // Function to validate email
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation pattern
+            return emailPattern.test(email);
+        }
+
+        // Email input validation on keyup
+        emailInput.addEventListener('keyup', () => {
+            if (validateEmail(emailInput.value)) {
+                emailInput.classList.remove('is-invalid');
+                emailInput.classList.add('is-valid');
+            } else {
+                emailInput.classList.remove('is-valid');
+                emailInput.classList.add('is-invalid');
+            }
+        });
+
+        // Handle signup button click
+        signupButton.addEventListener('click', () => {
+            const email = emailInput.value; // Get the email input value
+
+            if (validateEmail(email)) {
+                // Send email using EmailJS to admin
+                emailjs.send("service_q4wu6rd", "template_lyreh4p", {
+                    from_email: email // User's email to show who subscribed
+                })
+                    .then((response) => {
+                        // Show success alert with SweetAlert
+                        Swal.fire({
+                            title: "Thank you for subscribing!",
+                            icon: "success",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        }).then(() => {
+                            // Redirect to home or index page
+                            window.location.href = "index.html"; // Adjust URL as needed
+                        });
+
+                        // Reset the form by clearing the input field
+                        emailInput.value = ''; // Clear the input field
+                        emailInput.classList.remove('is-valid', 'is-invalid'); // Remove validation classes
+
+                        console.log("SUCCESS!", response.status, response.text);
+                    })
+                    .catch((error) => {
+                        // Show error alert with SweetAlert if email sending fails
+                        Swal.fire({
+                            icon: "error",
+                            title: "Failed to Send",
+                            text: "Failed to send the subscription notification. Please try again!"
+                        });
+                        console.error("FAILED...", error);
+                    });
+            } else {
+                // Show error alert if email validation fails
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter a valid email address!"
+                });
+            }
+        });
+
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/wow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="feedback.js"></script>
+
+</body>
+
+</html>

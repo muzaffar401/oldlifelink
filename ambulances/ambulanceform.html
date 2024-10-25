@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifelink</title>
+    <link rel="icon" href="/titlelogo.png" type="image/x-icon">
+    <style>
+     
+        body {
+            background-image: url(/img/1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            height: 1000px;
+        }
+
+        .booking-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .booking-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .form-group select {
+            width: 100%;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 800;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #cacaca;
+        }
+
+        .validation-error {
+            color: rgb(255, 180, 24);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        #background {
+            background-color: rgba(18, 29, 30, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="booking-form" id="background">
+        <h2 style="color: white;">Ambulance Booking Form</h2>
+        <form id="ambulanceBookingForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+                <span class="validation-error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <span class="validation-error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <span class="validation-error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="ambulanceType">Ambulance Type:</label>
+                <select id="ambulanceType" name="ambulanceType">
+                    <option value="">Select Type</option>
+                    <option value="AC">AC</option>
+                    <option value="NON AC">NON AC</option>
+                    <option value="ICU">ICU</option>
+                    <option value="ICCU">ICCU</option>
+                </select>
+                <span class="validation-error" id="ambulanceTypeError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="region">Region:</label>
+                <select id="region" name="region">
+                    <option value="">Select Region</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Sindh">Sindh</option>
+                    <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                    <option value="Balochistan">Balochistan</option>
+                    <option value="Gilgit-Baltistan">Gilgit-Baltistan</option>
+                    <option value="Azad Kashmir">Azad Kashmir</option>
+                    <option value="Islamabad">Islamabad</option>
+                </select>
+                <span class="validation-error" id="regionError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city">
+                <span class="validation-error" id="cityError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="area">Area:</label>
+                <input type="text" id="area" name="area" placeholder="Enter your area">
+                <span class="validation-error" id="areaError"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">BOOK NOW</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const form = document.getElementById('ambulanceBookingForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const ambulanceTypeSelect = document.getElementById('ambulanceType');
+        const regionSelect = document.getElementById('region');
+        const cityInput = document.getElementById('city');
+        const areaInput = document.getElementById('area');
+
+        // Common function to display error messages
+        function showError(element, message) {
+            const errorSpan = document.getElementById(element.id + 'Error');
+            errorSpan.textContent = message;
+        }
+
+        // Centralized function to validate all fields
+        function validateAllFields() {
+            // Trigger validations for each input field
+            nameInput.dispatchEvent(new Event('input'));
+            emailInput.dispatchEvent(new Event('input'));
+            phoneInput.dispatchEvent(new Event('input'));
+            ambulanceTypeSelect.dispatchEvent(new Event('change'));
+            regionSelect.dispatchEvent(new Event('change'));
+            cityInput.dispatchEvent(new Event('input'));
+            areaInput.dispatchEvent(new Event('input'));
+        }
+
+        // Save form data to local storage
+        function saveFormData() {
+            const formData = {
+                name: nameInput.value,
+                email: emailInput.value,
+                phone: phoneInput.value,
+                ambulanceType: ambulanceTypeSelect.value,
+                region: regionSelect.value,
+                city: cityInput.value,
+                area: areaInput.value
+            };
+            localStorage.setItem('ambulanceBookingData', JSON.stringify(formData));
+            Swal.fire({
+                title: 'Success!',
+                text: 'Form data has been saved successfully!',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        }
+
+        // Name Validation
+        nameInput.addEventListener('input', function () {
+            const nameValue = nameInput.value;
+            const nameRegex = /^[A-Za-z\s]+$/;
+
+            if (!nameValue) {
+                showError(nameInput, 'Please fill out this field.');
+            } else if (!nameRegex.test(nameValue)) {
+                showError(nameInput, 'Name should only contain letters.');
+            } else if (nameValue.length < 3 || nameValue.length > 12) {
+                showError(nameInput, 'Name must be between 3 and 12 characters.');
+            } else {
+                showError(nameInput, '');
+            }
+        });
+
+        // Email Validation
+        emailInput.addEventListener('input', function () {
+            const emailValue = emailInput.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailValue) {
+                showError(emailInput, 'Please fill out this field.');
+            } else if (!emailRegex.test(emailValue)) {
+                showError(emailInput, 'Please enter a valid email address.');
+            } else {
+                showError(emailInput, '');
+            }
+        });
+
+        // Phone Validation
+        phoneInput.addEventListener('input', function () {
+            const phoneValue = phoneInput.value;
+            const phoneRegex = /^\d{11}$/;
+
+            if (!phoneValue) {
+                showError(phoneInput, 'Please fill out this field.');
+            } else if (!phoneRegex.test(phoneValue)) {
+                showError(phoneInput, 'Phone number must be 11 digits.');
+            } else {
+                showError(phoneInput, '');
+            }
+        });
+
+        // Ambulance Type Validation
+        ambulanceTypeSelect.addEventListener('change', function () {
+            if (!ambulanceTypeSelect.value) {
+                showError(ambulanceTypeSelect, 'Please select an ambulance type.');
+            } else {
+                showError(ambulanceTypeSelect, '');
+            }
+        });
+
+        // Region Validation
+        regionSelect.addEventListener('change', function () {
+            if (!regionSelect.value) {
+                showError(regionSelect, 'Please select a region.');
+            } else {
+                showError(regionSelect, '');
+            }
+        });
+
+        // City Validation
+        cityInput.addEventListener('input', function () {
+            const cityValue = cityInput.value;
+            if (!cityValue) {
+                showError(cityInput, 'Please fill out this field.');
+            } else if (cityValue.length < 3) {
+                showError(cityInput, 'City name must be at least 3 characters long.');
+            } else {
+                showError(cityInput, '');
+            }
+        });
+
+        // Area Validation
+        areaInput.addEventListener('input', function () {
+            const areaValue = areaInput.value;
+            if (!areaValue) {
+                showError(areaInput, 'Please fill out this field.');
+            } else if (areaValue.length < 3) {
+                showError(areaInput, 'Area name must be at least 3 characters long.');
+            } else {
+                showError(areaInput, '');
+            }
+        });
+
+        // Trigger all validations when user starts typing in the first input field
+        nameInput.addEventListener('input', validateAllFields);
+
+        // Validate all fields and save data on form submission
+        form.addEventListener('submit', function (event) {
+            validateAllFields(); // Ensure all validations are triggered
+
+            // Check if there are any validation errors
+            const errors = document.querySelectorAll('.validation-error:empty').length !== document.querySelectorAll('.validation-error').length;
+
+            // Check if the user is logged in by verifying the presence of the current user in local storage
+            const currentUser = localStorage.getItem('currentUser');
+
+            if (!currentUser) {
+                // Show SweetAlert asking user to log in if currentUser is not available
+                Swal.fire({
+                    title: 'Not Logged In!',
+                    text: 'Please log in to your account to book an ambulance.',
+                    icon: 'warning',
+                    confirmButtonText: 'Log In'
+                }).then(() => {
+                    window.location.href = '/login.html';
+                });
+                form.reset();
+                event.preventDefault(); // Prevent form submission
+            } else if (errors) {
+                event.preventDefault(); // Prevent submission if there are validation errors
+                Swal.fire({
+                    title: 'Form Error',
+                    text: 'Please fix the highlighted errors before submitting.',
+                    icon: 'error'
+                });
+            } else {
+                event.preventDefault(); // Prevent default form submission
+
+                // Show confirmation popup
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Do you want to submit the form?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, submit it!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Booking successful!",
+                            icon: "success",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        }).then(() => {
+                            saveFormData(); // Save form data to local storage
+                            form.reset(); // Reset the form fields
+                            window.location.href = 'ambulanceTracking.html';
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>

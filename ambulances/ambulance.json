@@ -1,0 +1,234 @@
+{
+    "ac-amb": [
+        {
+            "id": 1,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "sindh",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+        },
+        {
+            "id": 2,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "punjab",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/ambulance-racing-through-rain-stormy-night-with-motion-blur_1197797-192047.jpg?size=626&ext=jpg&ga=GA1.1.972960042.1726777519&semt=ais_hybrid"
+        },
+        {
+            "id": 3,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "Khyber Pakhtunkhwa",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/night-shift-emergency-ambulance-service-special_954894-65616.jpg"
+        },
+        {
+            "id": 4,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "Balochistan",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+        },
+        {
+            "id": 5,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "Gilgit-Baltistan",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_1070019-188.jpg"
+        },
+        {
+            "id": 6,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "Azad Kashmir",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_1070019-188.jpg"
+        },
+        {
+            "id": 7,
+            "title": "AC-AMBULANCE",
+            "price": "$22",
+            "region": "Islamabad",
+            "type": "AC",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+        }
+    ],
+    "non-ac-amb": [
+        {
+            "id": 1,
+            "title": "NON-AC AMBULANCE",
+            "price": "$12",
+            "region": "sindh",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+        },
+        {
+            "id": 2,
+            "title": "NON-AC-AMBULANCE",
+            "price": "$12",
+            "region": "punjab",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+        },
+        {
+            "id": 3,
+            "title": "NON-AC- AMBULANCE",
+            "price": "$12",
+            "region": "Khyber Pakhtunkhwa",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/night-shift-emergency-ambulance-service-special_954894-65616.jpg"
+        },
+        {
+            "id": 4,
+            "title": "NON-AC AMBULANCE",
+            "price": "$12",
+            "region": "Balochistan",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+        },
+        {
+            "id": 5,
+            "title": "NON-AC AMBULANCE",
+            "price": "$12",
+            "region": "Gilgit-Baltistan",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_1070019-188.jpg"
+        },
+        {
+            "id": 6,
+            "title": "NON-AC AMBULANCE",
+            "price": "$12",
+            "region": "Azad Kashmir",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/emergency-ambulance-car-moving-fast-night-american-city-district-with-motion-blur_177786-5541.jpg"
+        },
+        {
+            "id": 7,
+            "title": "NON-AC AMBULANCE",
+            "price": "$12",
+            "region": "Islamabad",
+            "type": "NON-AC",
+            "image": "https://img.freepik.com/premium-photo/911-emergency-ambulance-car-moving-fast-night-american-city-downtown-district-with-motion-blur_177786-2191.jpg"
+        }
+    ],
+    "icu-amb": [
+        {
+            "id": 1,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "sindh",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+        },
+        {
+            "id": 2,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "punjab",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+        },
+        {
+            "id": 3,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "Khyber Pakhtunkhwa",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/night-shift-emergency-ambulance-service-special_954894-65616.jpg"
+        },
+        {
+            "id": 4,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "Balochistan",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+        },
+        {
+            "id": 5,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "Gilgit-Baltistan",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+        },
+        {
+            "id": 6,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "Azad Kashmir",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+        },
+        {
+            "id": 7,
+            "title": "ICU-AMBULANCE",
+            "price": "$32",
+            "region": "Islamabad",
+            "type": "ICU",
+            "image": "https://img.freepik.com/premium-photo/photo-emergency-ambulance-car-fast-driving-night-city-downtown-district-with-motion-blur-ambulance-rushes-call-through-city-night-911_177786-4003.jpg"
+        }
+    ],
+    "iccu-amb": [
+        {
+            "id": 1,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "sindh",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+        },
+        {
+            "id": 2,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "punjab",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+        },
+        {
+            "id": 3,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "Khyber Pakhtunkhwa",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/night-shift-emergency-ambulance-service-special_954894-65616.jpg"
+        },
+        {
+            "id": 4,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "Balochistan",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+        },
+        {
+            "id": 5,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "Gilgit-Baltistan",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+        },
+        {
+            "id": 6,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "Azad Kashmir",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+        },
+        {
+            "id": 7,
+            "title": "ICCU-AMBULANCE",
+            "price": "$42",
+            "region": "Islamabad",
+            "type": "ICCU",
+            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+        }
+    ]
+}

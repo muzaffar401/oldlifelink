@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lifelink</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="titlelogo.png" type="image/x-icon">
+
+
+
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1>Welcome to Ambulance Web Portal</h1>
+    </div>
+
+
+
+
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block main-content">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+
+                        <div class="ps-3">
+                            <a href="mailto:lifelink115@gmail.com" class="text-muted small"><i
+                                    class="fas fa-envelope text-primary me-2"></i>lifelink115@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex pe-3">
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://www.facebook.com/profile.php?id=100059563837220&mibextid=ZbWKwL"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://x.com/Muzaffar401?t=5Oo42XPN4flIP3PEomc2Vg&s=09"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://www.instagram.com/muzaffar______ahmed?igsh=MXN5amZzcWU4eDRtZg=="><i
+                                    class="fab fa-instagram"></i></a>
+                            <a class="btn p-0 text-primary me-3"
+                                href="https://www.linkedin.com/in/muzaffar-ahmed-b8652b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary mb-0"><i class="fas fa-plus me-2"></i> Lifelink</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-0 mx-lg-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about-us/about_us.html" class="nav-item nav-link">About</a>
+                        <a href="services/service.html" class="nav-item nav-link">Services</a>
+                        <a href="gallery/gallery.html" class="nav-item nav-link">Gallery</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Types of Vehicle</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="categoryAmbulances/catAmbulance.html" class="dropdown-item">AC</a>
+                                <a href="categoryAmbulances/catAmbulance.html" class="dropdown-item">NON AC</a>
+                                <a href="categoryAmbulances/catAmbulance.html" class="dropdown-item">ICU</a>
+                                <a href="categoryAmbulances/catAmbulance.html" class="dropdown-item">ICCU</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Pages</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="ambulances/ambulances.html" class="dropdown-item">All Ambulances</a>
+                                <a href="feedback/feedback.html" class="dropdown-item">Feedback</a>
+                                <a href="sitemap/sitemap.html" class="dropdown-item">Site Map</a>
+                                <a href="faqs/faqs.html" class="dropdown-item">FAQs</a>
+                            </div>
+                        </div>
+                        <a href="contact-us/contact.html" class="nav-item nav-link">Contact</a>
+                        <div class="nav-btn px-3">
+                            <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0"
+                                data-bs-toggle="modal" data-bs-target="#searchModal"><i
+                                    class="fas fa-search"></i></button> -->
+                            <button class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0" id="userAccount"
+                                type="button" onclick="redirectToLogin()">
+                                <i class="fas fa-user-circle"></i> <span id="accountText">Sign Up/Login</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+
+            <!-- Offcanvas Profile Section -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasProfile"
+                aria-labelledby="offcanvasProfileLabel">
+                <div class="offcanvas-header bg-primary text-white">
+                    <h5 id="offcanvasProfileLabel" class="mb-0 text-light">Your Profile</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-center bg-light d-flex flex-column align-items-center">
+                    <!-- Profile Image and Upload Button -->
+                    <div class="position-relative mb-4">
+                        <img id="profileImage" src="/img/user-image-with-black-background.png" alt="Profile Image"
+                            class="rounded-circle border border-3 border-primary shadow"
+                            style="width: 120px; height: 120px;">
+                        <button class="btn btn-sm btn-light rounded-circle position-absolute bottom-0 end-0"
+                            style="border: 1px solid #ccc;" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+
+                    <!-- User Name -->
+                    <h4 id="userName" class="fw-bold text-dark mb-3">John Doe</h4>
+
+                    <!-- Buttons Section -->
+                    <div class="w-100 d-grid gap-2 px-4">
+                        <!-- Change Profile Image Button -->
+                        <button class="btn btn-primary mb-2" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-camera-retro me-2"></i>Change Profile Image
+                        </button>
+                        <input type="file" id="fileInput" accept="image/*" onchange="updateProfileImage()"
+                            style="display: none;">
+
+                        <!-- Logout Button -->
+                        <button class="btn btn-outline-secondary mb-2" onclick="logout()">
+                            <i class="fas fa-door-open me-2"></i>Logout
+                        </button>
+
+                        <!-- Remove Account Button -->
+                        <button class="btn btn-danger mb-2" onclick="removeAccount()">
+                            <i class="fas fa-user-times me-2"></i>Remove Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Modal Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center bg-primary">
+                    <div class="input-group w-75 mx-auto d-flex">
+                        <input type="search" class="form-control p-3" placeholder="keywords"
+                            aria-describedby="search-icon-1">
+                        <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i
+                                class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Search End -->
+
+    <!-- slider -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/1.avif" class="d-block w-100" alt="...">
+                <!-- <img src="/img/dark.jpeg" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="/img/2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/1.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light about pb-5 mt-5">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-xl-6 wow fadeInLeft " data-wow-delay="0.2s" data-aos="fade-down">
+                    <div class="about-item-content bg-white rounded p-5 h-100">
+                        <h4 class="text-primary">About LifeLink</h4>
+                        <h1 class="display-4 mb-4"> About E-Ambulances</h1>
+                        <p>
+                            Welcome to e-Ambulances, your go-to platform for reliable, quick, and efficient ambulance
+                            services. Our mission is to revolutionize emergency medical response by leveraging
+                            technology to provide fast access to ambulances whenever and wherever needed.
+                        </p>
+                        <p>
+                            At e-Ambulances, we understand the critical importance of timely medical assistance, which
+                            is why our services are designed to offer:
+                        </p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i> 24/7 Service Available
+                            round-the-clock for emergencies anytime, anywhere.</p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i> Real-Time Tracking Track your
+                            ambulance in real-time with accurate GPS.
+                        </p>
+                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i> Access ambulances from a
+                            vast network across multiple regions
+                            flexible</p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="about-us/about_us.html">More
+                            Information</a>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s" data-aos="fade-down">
+                    <div class="bg-white rounded p-5 h-100">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-12">
+                                <div class="rounded bg-light">
+                                    <img src="img/about-1.png" class="img-fluid rounded w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-5  ">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting  ">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Ambulances</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-5">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">999</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Awards WON</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-5">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Skilled Drivers</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-5">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Team Members</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+
+    <!-- gallery Start -->
+    <div class="container-fluid blog py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary fw-bold" data-aos="fade-down">All Ambulances</h4>
+                <h1 class="display-4 mb-4" data-aos="fade-down">News And Updates</h1>
+                <p class="mb-0" data-aos="fade-down"> **Life Link provides a range of ambulance services, including ICU,
+                    ICCU, A/C, and non-A/C ambulances. Each vehicle is equipped with advanced medical equipment and
+                    staffed by trained professionals.
+                    Our services are designed to ensure optimal care and comfort for patients during transport.**
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- 1 -->
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="img/amb4.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Karachi Ambulances</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+
+
+                            <a href="ambulances/ambulances.html" class="btn p-0"> View More <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2-->
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="img/amb5.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Lahore Ambulances</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+
+
+                            <a href="ambulances/ambulances.html" class="btn p-0"> View More <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="img/amb58.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span> Balochistan Ambulances</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+
+
+                            <a href="ambulances/ambulances.html" class="btn p-0"> View More <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="col-lg-6 col-xl-4  mt-5 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="img/am1.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span> Islamabad Ambulances</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+
+
+                            <a href="ambulances/ambulances.html" class="btn p-0"> View More <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--  5-->
+                <div class="col-lg-6 col-xl-4  mt-5 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="img/amb6.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Multan Ambulances</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+
+
+                            <a href="ambulances/ambulances.html" class="btn p-0"> View More <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="col-lg-6 col-xl-4  mt-5 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="img/am3.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Faislabad Ambulance</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+
+
+                            <a href="ambulances/ambulances.html" class="btn p-0"> View More <i
+                                    class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    <!-- Service ambulances Start -->
+    <div class="container-fluid service py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary" data-aos="fade-down">Our Services</h4>
+                <h1 class="display-4 mb-4" data-aos="fade-down">We Provide Best Services</h1>
+                <p class="mb-0" data-aos="fade-down"> Ambulance services, including ICU, ICCU, A/C, and non-A/C
+                    ambulances. Each vehicle is equipped with advanced medical equipment and staffed by trained
+                    professionals.
+                    Our services are designed to ensure optimal care and comfort for patients during transport.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="img/amb58.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-ambulance fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">A/C Ambulance</a>
+                                <p class="mb-4" style="text-align: start;"> Equipped with climate control for patient
+                                    comfort and stability during transport. Maintains optimal temperature, ensuring a
+                                    stress-free journey in all weather conditions.</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4"
+                                    href="categoryAmbulances/catAmbulance.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="img/amb4.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-ambulance fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4"> Non-A/C Ambulance</a>
+                                <p class="mb-4" style="text-align: start;"> Provides essential medical care with a
+                                    focus on cost-efficiency.
+                                    Ideal for situations where air conditioning is not required but medical support
+                                    remains a priority</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4"
+                                    href="categoryAmbulances/catAmbulance.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="img/amb58.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-ambulance fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4"> ICU Ambulance</a>
+                                <p class="mb-4" style="text-align: start;"> Designed for intensive care with
+                                    state-of-the-art equipment and monitoring systems.
+                                    Provides immediate, specialized medical support for critically ill patients during
+                                    transit</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4"
+                                    href="categoryAmbulances/catAmbulance.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="img/amb9.jpg" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-ambulance fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4"> ICCU Ambulance</a>
+                                <p class="mb-4" style="text-align: start;">
+                                    Equipped with advanced life support systems for critical care on the go.
+                                    Our specialized team ensures prompt and effective medical attention during
+                                    transportation.
+                                </p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4"
+                                    href="categoryAmbulances/catAmbulance.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center wow fadeInUp mt-5" data-wow-delay="0.2s">
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="categoryAmbulances/catAmbulance.html">More
+                        Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- FAQs Start -->
+    <div class="container-fluid faq-section bg-light py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="h-100">
+                        <div class="mb-5">
+                            <h4 class="text-primary" data-aos="fade-down" id="Faqs">Some Important FAQ's</h4>
+                            <h1 class="display-4 mb-0" data-aos="fade-down">Common Frequently Asked Questions</h1>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button border-0" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Q: What types of ambulances does Life Link offer?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show active"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body rounded">
+                                        A: Life Link offers a variety of ambulances to meet different needs, including
+                                        ICU ambulances, ICCU ambulances, A/C ambulances, and non-A/C ambulances. Each
+                                        type is equipped to provide
+                                        the appropriate level of care and comfort based on patient requirements and
+                                        transport conditions.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Q: How do Life Link ambulances ensure patient comfort?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        A: We use climate-controlled A/C ambulances to maintain a comfortable
+                                        temperature.
+                                        Our staff is trained to provide compassionate care and manage patient needs
+                                        throughout the journey.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Q: Is Life Link ambulance service available 24/7?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        A: Yes, Life Link ambulances are available 24/7 to respond to emergencies and
+                                        provide reliable medical transport at any time.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQs End -->
+
+
+
+    <!-- our services -->
+    <div class="container-fluid feature bg-light py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary" data-aos="fade-down" id="services">Our Services</h4>
+                <h1 class="display-4 mb-4" data-aos="fade-down"> Your Lifeline in Emergencies</h1>
+                <p class="mb-0" data-aos="fade-down">
+                    In critical moments, an ambulance can be the difference between life and death, providing rapid
+                    response and expert care when you need it most. With the assurance of health insurance, you can
+                    access these life-saving services without the worry of unexpected costs,
+                    ensuring you're protected during life's most urgent times. </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="far fa-handshake fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">Trusted Company</h4>
+                        <p class="mb-4" style="text-align: start;">
+
+                            Our reputation for reliability and excellence is built on years of dedicated service and a
+                            commitment
+                            to quality. You can trust us to deliver exceptional care and support .
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="services/service.html">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fa fa-exclamation-triangle fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4"> Emergency Care:</h4>
+                        <p class="mb-4" style="text-align: start;"> Emergency care provides immediate treatment for
+                            life-threatening conditions, focusing on stabilizing patients and urgent interventions.
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="services/service.html">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fa fa-bullseye fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">Immediate Response Units</h4>
+                        <p class="mb-4" style="text-align: start;"> Ambulances available around the clock to provide
+                            urgent medical care and transport to the nearest hospital or medical facility.
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="services/service.html">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fa fa-headphones fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">24/7 Fast Support</h4>
+                        <p class="mb-4" style="text-align: start;"> No matter the time or situation, our 24/7 fast
+                            support ensures that help is always just a call away.
+                            Day or night, we're here to provide quick, reliable assistance when you need it most.
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="services/service.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-6 col-xl-5">
+                                <div class="footer-item">
+                                    <a href="index.html" class="p-0">
+                                        <h3 class="text-white"><i class="fas fa-plus me-2"></i> Lifelink</h3>
+                                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                                    </a>
+                                    <p class="text-white mb-4">
+                                        LifeLink Ambulance Services offers 24/7 emergency transport with modern
+                                        ambulances and skilled medical staff, ensuring rapid response and safe patient
+                                        care.</p>
+                                    <div class="footer-btn d-flex">
+                                        <a class="btn btn-md-square rounded-circle me-3"
+                                            href="https://www.facebook.com/profile.php?id=100059563837220&mibextid=ZbWKwL"><i
+                                                class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3"
+                                            href="https://x.com/Muzaffar401?t=5Oo42XPN4flIP3PEomc2Vg&s=09"><i
+                                                class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3"
+                                            href="https://www.instagram.com/muzaffar______ahmed?igsh=MXN5amZzcWU4eDRtZg=="><i
+                                                class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-0"
+                                            href="https://www.linkedin.com/in/muzaffar-ahmed-b8652b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                                class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Useful Links</h4>
+                                    <a href="about-us/about_us.html"><i class="fas fa-angle-right me-2"></i> About
+                                        Us</a>
+                                    <a href="gallery/gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                                    <a href="services/service.html"><i class="fas fa-angle-right me-2"></i> Services</a>
+                                    <a href="faqs/faqs.html"><i class="fas fa-angle-right me-2"></i> FAQ's</a>
+                                    <a href="sitemap/sitemap.html"><i class="fas fa-angle-right me-2"></i> Site Map</a>
+                                    <a href="contact-us/contact.html"><i class="fas fa-angle-right me-2"></i>
+                                        Contact</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Types of Vehicle</h4>
+                                    <a href="categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>AC</a>
+                                    <a href="categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>NON AC</a>
+                                    <a href="categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>ICU</a>
+                                    <a href="categoryAmbulances/catAmbulance.html"><i
+                                            class="fas fa-angle-right me-2"></i>ICCU</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Newsletter</h4>
+                        <p class="text-white mb-3">Join our newsletter for updates on ambulance services, community
+                            stories, and events. Discover how LifeLink is making a difference in Pakistan and how you
+                            can help!</p>
+                        <div class="position-relative rounded-pill mb-4">
+                            <input id="email-input" class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Enter your email">
+                            <button type="button" id="signup-button"
+                                class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your User ID
+        emailjs.init("eU3wdykStk6PaHL-P"); // Your EmailJS User ID
+
+        // Get references to the input and button elements
+        const emailInput = document.getElementById('email-input'); // Email input field
+        const signupButton = document.getElementById('signup-button'); // Signup button
+
+        // Function to validate email
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation pattern
+            return emailPattern.test(email);
+        }
+
+        // Email input validation on keyup
+        emailInput.addEventListener('keyup', () => {
+            if (validateEmail(emailInput.value)) {
+                emailInput.classList.remove('is-invalid');
+                emailInput.classList.add('is-valid');
+            } else {
+                emailInput.classList.remove('is-valid');
+                emailInput.classList.add('is-invalid');
+            }
+        });
+
+        // Handle signup button click
+        signupButton.addEventListener('click', () => {
+            const email = emailInput.value; // Get the email input value
+
+            if (validateEmail(email)) {
+                // Send email using EmailJS to admin
+                emailjs.send("service_q4wu6rd", "template_lyreh4p", {
+                    from_email: email // User's email to show who subscribed
+                })
+                    .then((response) => {
+                        // Show success alert with SweetAlert
+                        Swal.fire({
+                            title: "Thank you for subscribing!",
+                            icon: "success",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        }).then(() => {
+                            // Redirect to home or index page
+                            window.location.href = "index.html"; // Adjust URL as needed
+                        });
+
+                        // Reset the form by clearing the input field
+                        emailInput.value = ''; // Clear the input field
+                        emailInput.classList.remove('is-valid', 'is-invalid'); // Remove validation classes
+
+                        console.log("SUCCESS!", response.status, response.text);
+                    })
+                    .catch((error) => {
+                        // Show error alert with SweetAlert if email sending fails
+                        Swal.fire({
+                            icon: "error",
+                            title: "Failed to Send",
+                            text: "Failed to send the subscription notification. Please try again!"
+                        });
+                        console.error("FAILED...", error);
+                    });
+            } else {
+                // Show error alert if email validation fails
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Please enter a valid email address!"
+                });
+            }
+        });
+
+        window.onload = function () {
+            // Check if the user has visited the site during this session by looking for a flag in sessionStorage
+            if (!sessionStorage.getItem('visited')) {
+                // If the flag doesn't exist, show the welcome screen and add the 'slide-up' class after 2 seconds
+                setTimeout(() => {
+                    document.getElementById('welcomeScreen').classList.add('slide-up');
+
+                    // Show the main content after the animation is done
+                    setTimeout(() => {
+                        document.querySelector('.main-content').classList.add('show-content');
+                        document.getElementById('welcomeScreen').style.display = 'none'; // Hide welcome screen after animation
+                        // Set the 'visited' flag in sessionStorage to true
+                        sessionStorage.setItem('visited', 'true');
+                    }, 1000); // Wait for the sliding animation to finish
+                }, 2000); // Delay for showing the welcome message
+            } else {
+                // If the user has visited during this session, skip the welcome screen and show the main content immediately
+                document.getElementById('welcomeScreen').style.display = 'none';
+                document.querySelector('.main-content').classList.add('show-content');
+            }
+        }
+
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/wow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
