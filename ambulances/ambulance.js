@@ -3,21 +3,21 @@ let ambulanceData = [];  // Will hold fetched data
 // Function to create a card
 function createCard(item) {
     return `
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="${item.image}" class="img-fluid rounded-top w-100" alt="">
-                        </div>
-                        <div class="service-content p-4">
-                            <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4 mb-4">${item.title}</a>
-                                <p class="mb-4"><strong>Type:</strong> ${item.type}</p>
-                                <p class="mb-4"><strong>Region:</strong> ${item.region}</p>
-                                <p class="mb-4"><strong>Price:</strong> ${item.price}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                       <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+    <a href="${item.href}" class="service-item text-decoration-none">
+        <div class="service-img">
+            <img src="${item.image}" class="img-fluid rounded-top w-100" alt="">
+        </div>
+        <div class="service-content p-4">
+            <div class="service-content-inner">
+                <h4 class="mb-4">${item.title}</h4>
+                <p class="mb-4"><strong>Type:</strong> ${item.type}</p>
+                <p class="mb-4"><strong>Region:</strong> ${item.region}</p>
+                <p class="mb-4"><strong>Price:</strong> ${item.price}</p>
+            </div>
+        </div>
+    </a>
+</div>
             `;
 }
 
@@ -241,35 +241,45 @@ function logout() {
 }
 
 
-
 function removeAccount() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Filter out the current user from the users array
-    const updatedUsers = users.filter(user => user.username !== currentUser.username);
-
-    // Update the users list in localStorage
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
-
-    // Show confirmation that the account has been removed
     Swal.fire({
-        title: "Account removed!",
-        text: "Your account has been successfully deleted.",
-        icon: "success",
-        timer: 2000,
-        timerProgressBar: true,
-        showConfirmButton: false
-    }).then(() => {
-        // Clear login information from localStorage
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('currentUser');
+        title: "Are you sure?",
+        text: "Do you really want to delete your account? This action cannot be undone.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "Cancel",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const users = JSON.parse(localStorage.getItem('users')) || [];
 
-        // Redirect to index page
-        window.location.href = 'ambulances.html';
+            // Filter out the current user from the users array
+            const updatedUsers = users.filter(user => user.username !== currentUser.username);
+
+            // Update the users list in localStorage
+            localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+            // Show confirmation that the account has been removed
+            Swal.fire({
+                title: "Account removed!",
+                text: "Your account has been successfully deleted.",
+                icon: "success",
+                timer: 2000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            }).then(() => {
+                // Clear login information from localStorage
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('currentUser');
+
+                // Redirect to index page
+                window.location.href = 'ambulances.html';
+            });
+        }
     });
 }
-
 
 
 

@@ -89,19 +89,25 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Redirect to "index.html" if user is already logged in
+            if (localStorage.getItem("isLoggedIn") === "true") {
+                window.location.href = "index.html";
+                return;
+            }
+
+            // Hide the register link if user just registered
             if (localStorage.getItem("justRegistered") === "true") {
                 document.getElementById("registerLink").style.display = "none";
                 localStorage.removeItem("justRegistered");
             }
 
-            // Trigger validation on all fields when the first input field (username) is modified
+            // Trigger validation on username input change
             document.querySelector("#username").addEventListener("input", validateAll);
         });
 
         function validateUsername() {
             let username = document.querySelector("#username").value;
             let validationUsername = document.getElementById("validationUsername");
-
             let users = JSON.parse(localStorage.getItem("users")) || [];
             let user = users.find(user => user.username === username);
 
@@ -123,7 +129,6 @@
             let password = document.querySelector("#password").value;
             let username = document.querySelector("#username").value;
             let validationPassword = document.getElementById("validationPassword");
-
             let users = JSON.parse(localStorage.getItem("users")) || [];
             let user = users.find(user => user.username === username);
 
@@ -146,11 +151,8 @@
             let isPasswordValid = validatePassword();
             return isUsernameValid && isPasswordValid;
         }
-
         function login() {
-            let username = document.querySelector("#username").value;
-            let password = document.querySelector("#password").value;
-
+            // Validate all fields before proceeding
             if (!validateAll()) {
                 Swal.fire({
                     icon: "error",
@@ -160,10 +162,15 @@
                 return;
             }
 
+            let username = document.querySelector("#username").value;
+            let password = document.querySelector("#password").value; // Ensure you capture the password input
             let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Find the user in local storage
             let user = users.find(user => user.username === username);
 
-            if (!user || (user.password !== password && username !== "admin")) {
+            // Check if the user exists
+            if (!user) {
                 Swal.fire({
                     icon: "error",
                     title: "Invalid Login",
@@ -172,6 +179,17 @@
                 return;
             }
 
+            // Check the password for the found user
+            if (user.password !== password && username !== "admin") {
+                Swal.fire({
+                    icon: "error",
+                    title: "Invalid Login",
+                    text: "Incorrect Username or Password"
+                });
+                return;
+            }
+
+            // Successful login
             Swal.fire({
                 title: "Login successful!",
                 icon: "success",
@@ -181,9 +199,17 @@
             }).then(() => {
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('currentUser', JSON.stringify(user));
-                window.location.href = "index.html";
+                window.location.href = "index.html"; // Redirect after successful login
             });
         }
+
+
+        // Prevent user from navigating back to login page after successful login
+        window.addEventListener("popstate", function (event) {
+            if (localStorage.getItem("isLoggedIn") === "true") {
+                window.location.href = "index.html";
+            }
+        });
 
         function togglePasswordVisibility() {
             let passwordField = document.getElementById("password");
@@ -200,6 +226,7 @@
             }
         }
     </script>
+
 
 </body>
 

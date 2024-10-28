@@ -87,8 +87,10 @@
 
 .service .service-item .service-content .service-content-inner .h4,
 .service .service-item .service-content .service-content-inner p {
+    color: #787878;
     transition: 0.5s;
 }
+
 
 .service .service-item:hover .service-content .service-content-inner .h4,
 .service .service-item:hover .service-content .service-content-inner p {
@@ -109,7 +111,7 @@
     color: var(--bs-dark);
 }
 
-.service .service-item .service-content::after {
+.service-content::after {
     content: "";
     position: absolute;
     width: 100%;

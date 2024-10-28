@@ -102,14 +102,40 @@
     <script src="/js/wow.js"></script>
     <script src="js/main.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Clear the registration form if the user comes back to the page
+            if (localStorage.getItem("justRegistered") === "true") {
+                localStorage.removeItem("justRegistered");
+                clearRegistrationForm(); // Clear the form data
+            }
+        });
+
+        function clearRegistrationForm() {
+            document.querySelector("#text").value = "";
+            document.querySelector("#email").value = "";
+            document.querySelector("#password").value = "";
+            document.querySelector("#tel").value = "";
+            document.getElementById("validation1").innerHTML = "";
+            document.getElementById("validation2").innerHTML = "";
+            document.getElementById("validation3").innerHTML = "";
+            document.getElementById("validation4").innerHTML = "";
+        }
+
         function validateUsername() {
             let text = document.querySelector("#text").value;
-            let regex = /^[a-zA-Z]{3,12}$/;
+            let regex = /^[a-zA-Z]{3,12}$/; // Disallows spaces and only allows letters
+
             if (text === "") {
                 document.getElementById("validation1").innerHTML = "Please fill out this field";
                 document.getElementById("validation1").style.color = "red";
             } else if (text.length < 3) {
                 document.getElementById("validation1").innerHTML = "At least 3 characters are required";
+                document.getElementById("validation1").style.color = "red";
+            } else if (text.length > 12) {
+                document.getElementById("validation1").innerHTML = "No more than 12 characters are allowed";
+                document.getElementById("validation1").style.color = "red";
+            } else if (text.includes(" ")) {
+                document.getElementById("validation1").innerHTML = "Spaces are not allowed in the username";
                 document.getElementById("validation1").style.color = "red";
             } else if (!regex.test(text)) {
                 document.getElementById("validation1").innerHTML = "Numbers are not allowed";
@@ -152,11 +178,16 @@
 
         function validatePhone() {
             let phone = document.querySelector("#tel").value;
-            let regex = /^\d{11}$/;
+            let onlyDigitsRegex = /^\d+$/; // Checks if the input contains only digits
+            let exactLengthRegex = /^\d{11}$/; // Checks if the input is exactly 11 digits
+
             if (phone === "") {
                 document.getElementById("validation4").innerHTML = "Please fill out this field";
                 document.getElementById("validation4").style.color = "red";
-            } else if (!regex.test(phone)) {
+            } else if (!onlyDigitsRegex.test(phone)) {
+                document.getElementById("validation4").innerHTML = "Phone number should contain only digits, no letters or special characters.";
+                document.getElementById("validation4").style.color = "red";
+            } else if (!exactLengthRegex.test(phone)) {
                 document.getElementById("validation4").innerHTML = "Phone number must be exactly 11 digits.";
                 document.getElementById("validation4").style.color = "red";
             } else {
@@ -179,9 +210,6 @@
                 document.getElementById("validation3").innerHTML === "" &&
                 document.getElementById("validation4").innerHTML === "") {
 
-
-
-
                 let username = document.querySelector("#text").value;
                 let email = document.querySelector("#email").value;
                 let password = document.querySelector("#password").value;
@@ -197,8 +225,6 @@
                     return;
                 }
 
-
-
                 Swal.fire({
                     title: "Registration successful!",
                     icon: "success",
@@ -209,7 +235,8 @@
                     users.push({ username, email, password, phone, profileImage: "" });
                     localStorage.setItem("users", JSON.stringify(users));
                     localStorage.setItem("justRegistered", "true");
-                    location.assign("login.html");
+                    clearRegistrationForm(); // Clear form data
+                    location.assign("login.html"); // Redirect to login page
                 });
             } else {
                 Swal.fire({
@@ -219,7 +246,6 @@
                 });
             }
         }
-
 
         function togglePasswordVisibility() {
             let passwordField = document.getElementById("password");
@@ -235,7 +261,14 @@
                 passwordIcon.classList.add("fa-eye");
             }
         }
+        
+        window.addEventListener("beforeunload", function () {
+            localStorage.removeItem("justRegistered"); // Remove the registration flag
+            clearRegistrationForm(); // Clear the form fields
+        });
+
     </script>
+
 
 </body>
 

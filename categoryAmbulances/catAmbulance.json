@@ -7,7 +7,7 @@
             "price": "$22",
             "region": "sindh",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-68587.jpg"
+            "image": "/img/ambulance1.avif"
         },
         {
             "id": 2,
@@ -16,7 +16,7 @@
             "price": "$22",
             "region": "punjab",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+            "image": "/img/ambulance2.avif"
         },
         {
             "id": 3,
@@ -25,7 +25,7 @@
             "price": "$22",
             "region": "Khyber Pakhtunkhwa",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/night-shift-emergency-ambulance-service-special_954894-65616.jpg"
+            "image": "/img/ambulance3.avif"
         },
         {
             "id": 4,
@@ -34,7 +34,7 @@
             "price": "$22",
             "region": "Balochistan",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_983424-4796.jpg"
+            "image": "/img/ambulance4.avif"
         },
         {
             "id": 5,
@@ -43,7 +43,7 @@
             "price": "$22",
             "region": "Gilgit-Baltistan",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/medical-emergency-ambulance-car-driving-with-red-lights-through-city-road_1070019-188.jpg"
+            "image": "/img/ambulance5.avif"
         },
         {
             "id": 6,
@@ -52,7 +52,7 @@
             "price": "$22",
             "region": "punjab",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-emergency-response-vehicle-take-medical-victims-hospital_1061358-69052.jpg"
+            "image": "/img/ambulance6.avif"
         },
         {
             "id": 7,
@@ -61,203 +61,184 @@
             "price": "$22",
             "region": "Khyber Pakhtunkhwa",
             "type": "AC",
-            "image": "https://img.freepik.com/premium-photo/night-shift-emergency-ambulance-service-special_954894-65616.jpg"
+            "image": "/img/ambulance3.avif"
+        },
+        {
+            "id": 8,
+            "title": "Sindh AC AMBULANCE",
+            "text": "our premium ac Sindh ambulance",
+            "price": "$22",
+            "region": "sindh",
+            "type": "AC",
+            "image": "/img/ambulance1.avif"
         }
     ],
     "non-ac-amb": [
         {
-            "id": 6,
+            "id": 9,
             "title": "Sindh NON-AC AMBULANCE",
             "text": "Our Sindh Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "sindh",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-with-flashing-lights-speeds-through-futuristic-city_951586-92326.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance7.avif"
         },
         {
-            "id": 7,
+            "id": 10,
             "title": "Balochistan NON-AC-AMBULANCE",
             "text": "Our Balochistan Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Balochistan",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-speeds-through-busy-urban-street-with-flashing-lights-sirens-capturing-urgency-moment-van-goghinspired-style_1275033-4830.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance8.avif"
         },
         {
-            "id": 8,
+            "id": 11,
             "title": "Khyber Pakhtunkhua NON-AC- AMBULANCE",
             "text": "Our Khyber Pakhtunkhua Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Khyber Pakhtunkhua",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-photo_551707-130282.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance9.avif"
         },
         {
-            "id": 9,
+            "id": 12,
             "title": "Gilgit Baltistan NON-AC AMBULANCE",
             "text": "Our Gilgit Baltistan Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Gilgit Baltistan",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/paramedics-front-ambulance-automobile-prepared-emergency_964514-1232.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance10.avif"
         },
         {
-            "id": 10,
+            "id": 13,
             "title": "Punjab NON-AC AMBULANCE",
             "text": "Our Punjab Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Punjab",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/ambulance-photo_551707-130453.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance11.avif"
         },
         {
-            "id": 11,
+            "id": 14,
             "title": "Azad Kashmir NON-AC AMBULANCE",
             "text": "Our Azad Kashmir Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Azad Kashmir",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/emergency-ambulance-car-moving-fast-night-american-city-district-with-motion-blur_177786-5541.jpg"
+            "image": "/img/ambulance12.avif"
         },
         {
-            "id": 12,
+            "id": 15,
             "title": "Sindh NON-AC AMBULANCE",
             "text": "Our Sindh Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Sindh",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/911-emergency-ambulance-car-moving-fast-night-american-city-downtown-district-with-motion-blur_177786-2191.jpg"
+            "image": "/img/ambulance13.avif"
         },
         {
-            "id": 13,
+            "id": 16,
             "title": "Balochistan NON-AC AMBULANCE",
             "text": "Our Balochistan Non Ac Ambulance Service provides 24-hour emergency assistance across the entirety of Pakistan",
             "price": "$12",
             "region": "Balochistan",
             "type": "NON-AC",
-            "image": "https://img.freepik.com/premium-photo/photo-emergency-ambulance-car-fast-driving-night-city-downtown-district-with-motion-blur-ambulance-rushes-call-through-city-night-911_177786-4003.jpg"
+            "image": "/img/ambulance14.avif"
         }
     ],
     "icu-amb": [
         {
-            "id": 14,
+            "id": 17,
             "title": "Sindh ICU AMBULANCE",
             "text": "Our Sindh Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "sindh",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-street-road-night-light-image_853163-31639.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance15.avif"
         },
         {
-            "id": 15,
+            "id": 18,
             "title": "Punjab ICU-AMBULANCE",
             "text": "Our Punjab Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "punjab",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-van-rushes-down-highway_1337460-55814.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance16.avif"
         },
         {
-            "id": 16,
+            "id": 19,
             "title": "Balochistan ICU-AMBULANCE",
             "text": "Our Balochistan Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "Balochistan",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-arriving-hospital-emergency-entrance-fullscale-data-exploration-emergency-transport_1165841-8332.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance17.avif"
         },
         {
-            "id": 17,
+            "id": 20,
             "title": "Khyber Pakhtunkhua ICU-AMBULANCE",
             "text": "Our Khyber Pakhtunkhua Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "Khyber Pakhtunkhua",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/photo-ambulance-speeding-down-highway-with-its-lights-flashing_1189966-11371.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance18.avif"
         },
         {
-            "id": 18,
+            "id": 21,
             "title": "Azad Kashmir ICU AMBULANCE",
             "text": "Our Azad Kashmir Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "Azad Kashmir",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-street-road-night-light-image_853163-31639.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance19.avif"
         },
         {
-            "id": 19,
+            "id": 22,
             "title": "Islamabad ICU-AMBULANCE",
             "text": "Our Islamabad Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "Islamabad",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-van-rushes-down-highway_1337460-55814.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance16.avif"
         },
         {
-            "id": 20,
+            "id": 23,
             "title": "Balochistan ICU-AMBULANCE",
             "text": "Our Balochistan Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
             "price": "$32",
             "region": "Balochistan",
             "type": "ICU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-arriving-hospital-emergency-entrance-fullscale-data-exploration-emergency-transport_1165841-8332.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance20.avif"
+        },
+        {
+            "id": 24,
+            "title": "Sindh ICU AMBULANCE",
+            "text": "Our Sindh Icu Ambulances––24 hours/7 days a week––remain engaged on roads in lifting and shifting the seriously injured victims. ",
+            "price": "$32",
+            "region": "sindh",
+            "type": "ICU",
+            "image": "/img/ambulance15.avif"
         }
-        
     ],
     "iccu-amb": [
         {
-            "id": 21,
+            "id": 25,
             "title": "Sindh ICCU-AMBULANCE",
             "text": "Our Sindh Iccu Ambulance, has changed the landscape of emergency.",
             "price": "$42",
             "region": "sindh",
             "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-racing-through-rain-stormy-night-with-motion-blur_1197797-192192.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance21.avif"
         },
         {
-            "id": 22,
+            "id": 26,
             "title": "Punjab ICCU-AMBULANCE",
             "text": "Our Punjab Iccu Ambulance, has changed the landscape of emergency.",
             "price": "$42",
             "region": "punjab",
             "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-photo_551707-130524.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
-        },
-        {
-            "id": 23,
-            "title": "Khyber Pakhtunkhua ICCU-AMBULANCE",
-            "text": "Our Khyber Pakhtunkhua Iccu Ambulance, has changed the landscape of emergency.",
-            "price": "$42",
-            "region": "Khyber Pakhtunkhua",
-            "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/digitallyillustrated-ambulance-racing-emergency-with-vibrant-sunset-mountains-background_1103944-11046.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
-        },
-        {
-            "id": 24,
-            "title": "Balochistan ICCU-AMBULANCE",
-            "text": "Our Balochistan Iccu Ambulance, has changed the landscape of emergency.",
-            "price": "$42",
-            "region": "Balochistan",
-            "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-photo_551707-131139.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
-        },
-        {
-            "id": 25,
-            "title": "Gilgit Baltistan ICCU-AMBULANCE",
-            "text": "Our Gilgit Baltistan Iccu Ambulance, has changed the landscape of emergency.",
-            "price": "$42",
-            "region": "Gilgit Baltistan",
-            "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-racing-through-rain-stormy-night-with-motion-blur_1197797-192192.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
-        },
-        {
-            "id": 26,
-            "title": "Islamabad ICCU-AMBULANCE",
-            "text": "Our Islamabad Iccu Ambulance, has changed the landscape of emergency.",
-            "price": "$42",
-            "region": "Islamabad",
-            "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/ambulance-photo_551707-130524.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance22.avif"
         },
         {
             "id": 27,
@@ -266,7 +247,52 @@
             "price": "$42",
             "region": "Khyber Pakhtunkhua",
             "type": "ICCU",
-            "image": "https://img.freepik.com/premium-photo/digitallyillustrated-ambulance-racing-emergency-with-vibrant-sunset-mountains-background_1103944-11046.jpg?size=626&ext=jpg&ga=GA1.1.497133634.1724218244&semt=ais_hybrid"
+            "image": "/img/ambulance23.avif"
+        },
+        {
+            "id": 28,
+            "title": "Balochistan ICCU-AMBULANCE",
+            "text": "Our Balochistan Iccu Ambulance, has changed the landscape of emergency.",
+            "price": "$42",
+            "region": "Balochistan",
+            "type": "ICCU",
+            "image": "/img/ambulance24.avif"
+        },
+        {
+            "id": 29,
+            "title": "Gilgit Baltistan ICCU-AMBULANCE",
+            "text": "Our Gilgit Baltistan Iccu Ambulance, has changed the landscape of emergency.",
+            "price": "$42",
+            "region": "Gilgit Baltistan",
+            "type": "ICCU",
+            "image": "/img/ambulance21.avif"
+        },
+        {
+            "id": 30,
+            "title": "Islamabad ICCU-AMBULANCE",
+            "text": "Our Islamabad Iccu Ambulance, has changed the landscape of emergency.",
+            "price": "$42",
+            "region": "Islamabad",
+            "type": "ICCU",
+            "image": "/img/ambulance22.avif"
+        },
+        {
+            "id": 31,
+            "title": "Khyber Pakhtunkhua ICCU-AMBULANCE",
+            "text": "Our Khyber Pakhtunkhua Iccu Ambulance, has changed the landscape of emergency.",
+            "price": "$42",
+            "region": "Khyber Pakhtunkhua",
+            "type": "ICCU",
+            "image": "/img/ambulance23.avif"
+        },
+        {
+            "id": 32,
+            "title": "Sindh ICCU-AMBULANCE",
+            "text": "Our Sindh Iccu Ambulance, has changed the landscape of emergency.",
+            "price": "$42",
+            "region": "sindh",
+            "type": "ICCU",
+            "image": "/img/ambulance21.avif"
         }
     ]
 }

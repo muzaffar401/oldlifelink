@@ -15,26 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var namePattern = /^[a-zA-Z\s]{3,12}$/;
     var phonePattern = /^[0-9]{11}$/;
 
-    // Star elements
+    // Star elements for rating
     var stars = document.querySelectorAll(".rating-stars i");
 
-    // Add event listeners for star rating
+    // Star rating event listeners
     stars.forEach(function (star, index) {
         star.addEventListener("click", function () {
-            // Set the value of the hidden rating input
             ratingValueInput.value = star.getAttribute("data-value");
 
-            // Highlight selected stars
             stars.forEach(function (s, i) {
-                if (i <= index) {
-                    s.classList.add("selected");
-                } else {
-                    s.classList.remove("selected");
-                }
+                s.classList.toggle("selected", i <= index);
             });
 
-            // Hide error if rating is selected
-            validateRating();
+            validateRating(); // Hide error if rating is selected
         });
     });
 
@@ -53,8 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var phoneValue = phoneInput.value.trim();
         if (phoneValue === "") {
             phoneError.textContent = "Please fill out this field.";
-        } else if (phoneValue.length < 11 || !phonePattern.test(phoneValue)) {
-            phoneError.textContent = "Phone number should contain only digits and be 11 digits long.";
+        } else if (/[^0-9]/.test(phoneValue)) { // Check for non-digit characters
+            phoneError.textContent = "Phone number should contain only digits, no letters or special characters.";
+        } else if (!phonePattern.test(phoneValue)) {
+            phoneError.textContent = "Phone number must be exactly 11 digits.";
         } else {
             phoneError.textContent = "";
         }
@@ -83,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
         validateName();
         validatePhone();
         validateMessage();
-        validateRating(); // Validate rating here
+        validateRating();
     }
 
-    // Add event listeners for real-time validation
+    // Real-time validation event listeners
     nameInput.addEventListener("keyup", validateAll);
     phoneInput.addEventListener("keyup", validateAll);
     messageInput.addEventListener("keyup", validateAll);
@@ -98,14 +93,20 @@ document.addEventListener("DOMContentLoaded", function () {
             nameInput.value.trim() === "" ||
             !namePattern.test(nameInput.value) ||
             phoneInput.value.trim() === "" ||
-            phoneInput.value.length < 11 ||
+            /[^0-9]/.test(phoneInput.value) || // Check for non-digit characters in phone number
             !phonePattern.test(phoneInput.value) ||
             messageInput.value.trim() === "" ||
-            !validateRating() // Prevent form submission if rating is not valid
+            !validateRating() // Check if rating is valid
         ) {
-            e.preventDefault(); // Prevent form submission if any validation fails
+            e.preventDefault(); // Prevent form submission on error
+            Swal.fire({
+                title: "Error",
+                text: "Please correct the highlighted fields before submitting.",
+                icon: "error",
+                showConfirmButton: true
+            });
         } else {
-            e.preventDefault(); // Prevent default form submission for SweetAlert2
+            e.preventDefault(); // Prevent default form submission for SweetAlert
 
             var existingData = JSON.parse(localStorage.getItem("formData")) || [];
             var newEntry = {
@@ -125,11 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 timerProgressBar: true,
                 showConfirmButton: false
             }).then(() => {
-                form.submit(); // Submit form after SweetAlert2
+                form.submit(); // Submit form after SweetAlert
             });
         }
     });
 });
+
 
 (function ($) {
     "use strict";
@@ -255,31 +257,44 @@ function logout() {
 
 
 
+
 function removeAccount() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Filter out the current user from the users array
-    const updatedUsers = users.filter(user => user.username !== currentUser.username);
-
-    // Update the users list in localStorage
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
-
-    // Show confirmation that the account has been removed
     Swal.fire({
-        title: "Account removed!",
-        text: "Your account has been successfully deleted.",
-        icon: "success",
-        timer: 2000,
-        timerProgressBar: true,
-        showConfirmButton: false
-    }).then(() => {
-        // Clear login information from localStorage
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('currentUser');
+        title: "Are you sure?",
+        text: "Do you really want to delete your account? This action cannot be undone.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "Cancel",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const users = JSON.parse(localStorage.getItem('users')) || [];
 
-        // Redirect to index page
-        window.location.href = 'feedback.html';
+            // Filter out the current user from the users array
+            const updatedUsers = users.filter(user => user.username !== currentUser.username);
+
+            // Update the users list in localStorage
+            localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+            // Show confirmation that the account has been removed
+            Swal.fire({
+                title: "Account removed!",
+                text: "Your account has been successfully deleted.",
+                icon: "success",
+                timer: 2000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            }).then(() => {
+                // Clear login information from localStorage
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('currentUser');
+
+                // Redirect to index page
+                window.location.href = 'feedback.html';
+            });
+        }
     });
 }
 
