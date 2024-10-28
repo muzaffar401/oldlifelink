@@ -1,3 +1,4 @@
+// HTML Elements
 const statusMessage = document.getElementById('statusMessage');
 const cancelButton = document.getElementById('cancelButton');
 const mapContainer = document.getElementById('mapContainer');
@@ -5,43 +6,75 @@ const ambulance = document.getElementById('ambulance');
 const timerSpan = document.getElementById('timer');
 const userName = document.getElementById('userName1');
 const locationDetails = document.getElementById('locationDetails');
-const error404 = document.getElementById('error404');
 const trackingHeading = document.getElementById('trackingHeading');
-let countdown = 10;
-let countdownInterval; // Declare countdown interval to clear later
+const selectedAmbulanceDiv = document.getElementById('selectedAmbulance');
+let countdownInterval;
 
 // Hide user info and map initially
 userName.style.display = 'none';
 locationDetails.style.display = 'none';
 mapContainer.style.display = 'none';
+selectedAmbulanceDiv.style.display = 'none';
 
 // Fetch the user data from local storage
 let ambulanceBookingData = JSON.parse(localStorage.getItem('ambulanceBookingData'));
+let selectedAmbulance = JSON.parse(localStorage.getItem('selectedAmbulance'));
 
-// Function to show "Booking not found" message and hide relevant elements
-function showBookingNotFound() {
-    statusMessage.textContent = "Booking not found. Please book an ambulance first.";
+// Check if there was a previous leave attempt
+if (sessionStorage.getItem('leaveConfirmed')) {
+    // Clear the data since the user confirmed leaving the page
+    localStorage.removeItem('ambulanceBookingData');
+    localStorage.removeItem('selectedAmbulance');
+    sessionStorage.removeItem('countdown');
+    sessionStorage.removeItem('startTime');
+    sessionStorage.removeItem('leaveConfirmed');
+}
+
+// Redirect to home page if no booking data
+if (!ambulanceBookingData) {
+    window.location.replace('/index.html');
+}
+
+// Show cancellation message and hide elements
+function showBookingCancelled() {
+    statusMessage.textContent = "Your ambulance has been cancelled.";
     statusMessage.style.textAlign = 'center';
-    statusMessage.style.color = '#015fc9'
-    cancelButton.style.display = 'none'; // Hide cancel button
-    mapContainer.style.display = 'none'; // Hide map
+    statusMessage.style.color = '#015fc9';
+    cancelButton.style.display = 'none';
+    mapContainer.style.display = 'none';
     userName.style.display = 'none';
     locationDetails.style.display = 'none';
-    error404.style.display = 'block';
     trackingHeading.style.display = 'none';
+    selectedAmbulanceDiv.style.display = 'none';
+    history.replaceState(null, '', '/index.html');
 }
 
-// Check if booking data exists
-if (!ambulanceBookingData) {
-    showBookingNotFound();
-} else {
-    // If booking data exists, start tracking
-    startTracking();
-}
-
-// Function to start tracking
 function startTracking() {
-    // Cancel Button Logic with SweetAlert confirmation
+    sessionStorage.removeItem('isCancelled');
+
+    let countdown = sessionStorage.getItem('countdown')
+        ? parseInt(sessionStorage.getItem('countdown'))
+        : 10;
+
+    let startTime = sessionStorage.getItem('startTime');
+    if (!startTime) {
+        startTime = Date.now();
+        sessionStorage.setItem('startTime', startTime);
+    } else {
+        const elapsed = Math.floor((Date.now() - parseInt(startTime)) / 1000);
+        countdown = Math.max(0, countdown - elapsed);
+    }
+
+    if (countdown <= 0) {
+        onTrackingComplete();
+        return;
+    }
+
+    // Hide user name, location details, and selected ambulance info initially
+    userName.style.display = 'none';
+    locationDetails.style.display = 'none';
+    selectedAmbulanceDiv.style.display = 'none';
+
     cancelButton.addEventListener('click', function () {
         Swal.fire({
             title: 'Are you sure?',
@@ -53,82 +86,174 @@ function startTracking() {
             confirmButtonText: 'Yes, cancel it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Cancelled!',
-                    'Your booking has been cancelled.',
-                    'success'
-                ).then(() => {
-                    localStorage.removeItem('ambulanceBookingData'); // Clear booking data
-                    ambulanceBookingData = null; // Update variable to prevent tracking
-                    clearInterval(countdownInterval); // Stop countdown timer
-                    showBookingNotFound(); // Show "Booking not found" message
+                Swal.fire('Cancelled!', 'Your booking has been cancelled.', 'success').then(() => {
+                    localStorage.removeItem('ambulanceBookingData');
+                    localStorage.removeItem('selectedAmbulance');
+                    sessionStorage.removeItem('countdown');
+                    sessionStorage.removeItem('startTime');
+                    ambulanceBookingData = null;
+                    selectedAmbulance = null;
+                    clearInterval(countdownInterval);
+                    showBookingCancelled();
                 });
             }
         });
     });
 
-    // Countdown timer logic
+    // Start countdown and update timer every second
     countdownInterval = setInterval(() => {
-        // Check if booking data still exists before continuing countdown
-        if (!ambulanceBookingData) {
-            clearInterval(countdownInterval);
-            return;
-        }
-
         countdown--;
+        sessionStorage.setItem('countdown', countdown);
         timerSpan.textContent = countdown;
 
         if (countdown === 0) {
             clearInterval(countdownInterval);
-
-            // Update status message and hide cancel button
-            statusMessage.textContent = "Status: Ambulance on the way...";
-            cancelButton.style.display = 'none';
-
-            // Show the map and start animation
-            mapContainer.style.display = 'block';
-            ambulance.style.animationPlayState = 'running';
-
-            // Display user name and location after the countdown
-            if (ambulanceBookingData) {
-                userName.style.display = 'block';
-                userName.textContent = `Welcome, ${ ambulanceBookingData.name }`;
-                locationDetails.style.display = 'block';
-                locationDetails.textContent = `Your location: ${ ambulanceBookingData.region }, ${ ambulanceBookingData.city }, ${ ambulanceBookingData.area }`;
-            }
-
-            // Trigger animation completion logic after 30 seconds
-            setTimeout(() => {
-                // Clear ambulanceBookingData from local storage
-                localStorage.removeItem('ambulanceBookingData');
-                ambulanceBookingData = null; // Set to null to prevent restarting
-
-                // Show SweetAlert thank you message
-                Swal.fire({
-                    title: 'Thank You!',
-                    text: 'Thank you for using our service!',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                }).then(() => {
-                    window.location.href = '/index.html';
-                });
-            }, 30000); // 30 seconds for the animation
+            onTrackingComplete();
         }
-    }, 1000); // 1-second intervals for countdown
+    }, 1000);
 }
 
-// Handle backward navigation and remove booking data
-window.addEventListener("popstate", () => {
-    // Clear the booking data if user navigates back
-    localStorage.removeItem('ambulanceBookingData');
-    ambulanceBookingData = null; // Update variable to prevent tracking
-    showBookingNotFound(); // Show "Booking not found" message
+// Function to handle tracking completion
+function onTrackingComplete() {
+    statusMessage.textContent = "Status: Ambulance on the way...";
+    cancelButton.style.display = 'none';
+
+    // Display map and selected ambulance info
+    mapContainer.style.display = 'block';
+    ambulance.style.animationPlayState = 'running';
+
+    // Show user info and selected ambulance details when countdown is complete
+    userName.style.display = 'block';
+    userName.textContent = `Welcome, ${ambulanceBookingData.name}`;
+    locationDetails.style.display = 'block';
+    locationDetails.textContent = `Your location: ${selectedAmbulance.region}, ${ambulanceBookingData.city}, ${ambulanceBookingData.area}`;
+    selectedAmbulanceDiv.style.display = 'block';
+
+    document.getElementById('ambulanceType').textContent = selectedAmbulance.type;
+    document.getElementById('ambulanceRegion').textContent = selectedAmbulance.region;
+    document.getElementById('ambulancePrice').textContent = selectedAmbulance.price;
+
+    // Display ambulance image if available
+    const ambulanceImage = document.getElementById('ambulanceImage');
+    if (selectedAmbulance.image) {
+        ambulanceImage.src = selectedAmbulance.image;
+        ambulanceImage.style.display = 'block';
+    } else {
+        ambulanceImage.style.display = 'none';
+    }
+
+    // Clear tracking data after timeout and redirect to home page
+    setTimeout(() => {
+        localStorage.removeItem('ambulanceBookingData');
+        localStorage.removeItem('selectedAmbulance');
+        sessionStorage.removeItem('countdown');
+        sessionStorage.removeItem('startTime');
+        ambulanceBookingData = null;
+
+        Swal.fire({
+            title: 'Thank You!',
+            text: 'Thank you for using our service!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            history.replaceState(null, '', '/index.html');
+            window.location.href = '/index.html';
+        });
+    }, 30000);
+}
+
+
+// Start tracking if booking data exists
+if (ambulanceBookingData) {
+    startTracking();
+}
+
+// Intercept navigation events
+function handleNavigation(event) {
+    // Prevent default navigation
+    event.preventDefault();
+
+    // Show SweetAlert confirmation dialog
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "Leaving will cancel your booking.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, leave page',
+        cancelButtonText: 'Stay on page',
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // User confirmed, remove booking data and navigate
+            localStorage.removeItem('ambulanceBookingData');
+            localStorage.removeItem('selectedAmbulance');
+            sessionStorage.removeItem('countdown');
+            sessionStorage.removeItem('startTime');
+            ambulanceBookingData = null;
+            selectedAmbulance = null;
+
+            // Redirect to the intended page
+            window.location.replace(event.target.href);
+        }
+    });
+}
+
+// Add event listener to links/buttons that lead away from the page
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', handleNavigation);
 });
 
-// Ensure data is removed on page unload
-window.addEventListener("beforeunload", () => {
-    localStorage.removeItem('ambulanceBookingData');
+// Optionally, if there are any buttons leading to navigation
+document.querySelectorAll('button.navigate').forEach(button => {
+    button.addEventListener('click', handleNavigation);
 });
+
+
+// Disable back navigation
+history.pushState(null, null, location.href);
+window.addEventListener('popstate', function () {
+    // When the user tries to go back, push them back to the current page
+    history.pushState(null, null, location.href);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "Leaving will cancel your booking.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, leave page',
+        cancelButtonText: 'Stay on page',
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Clear data if user wants to leave
+            localStorage.removeItem('ambulanceBookingData');
+            localStorage.removeItem('selectedAmbulance');
+            sessionStorage.removeItem('countdown');
+            sessionStorage.removeItem('startTime');
+            sessionStorage.removeItem('leaveConfirmed');
+            ambulanceBookingData = null;
+            selectedAmbulance = null;
+            window.location.replace('/index.html');
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

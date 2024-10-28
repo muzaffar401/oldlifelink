@@ -69,14 +69,48 @@ fetch('catAmbulance.json')
         const ambulanceDetailsContainer = document.getElementById('ambulance-details');
         ambulanceDetailsContainer.innerHTML = `<p>Error loading ambulance data. Please try again later.</p>`;
     });
-
-// Book Now function
+// Book Now function with login check and data storage
 function bookAmbulance(ambulanceId) {
+    // Get ambulance size and details
     const ambulanceSize = document.getElementById('ambulanceSize').value;
+    const ambulanceImage = document.querySelector('#ambulance-details img').src;
+    const ambulanceTitle = document.querySelector('#ambulance-details h2').textContent;
+    const ambulanceType = document.querySelector('#ambulance-details p:nth-of-type(1)').textContent.replace('Type:', '').trim();
+    const ambulanceRegion = document.querySelector('#ambulance-details p:nth-of-type(2)').textContent.replace('Region:', '').trim();
+    const ambulancePrice = document.querySelector('#ambulance-details p:nth-of-type(3)').textContent.replace('Price:', '').trim();
 
-    // Redirect to the form page with query parameters (e.g., ambulance ID and size)
-    window.location.href = `/ambulances/ambulanceform.html?id=${ambulanceId}&size=${ambulanceSize}`;
+    // Save ambulance data to localStorage
+    const ambulanceData = {
+        id: ambulanceId,
+        size: ambulanceSize,
+        image: ambulanceImage,
+        title: ambulanceTitle,
+        type: ambulanceType,
+        region: ambulanceRegion,
+        price: ambulancePrice
+    };
+    localStorage.setItem('selectedAmbulance', JSON.stringify(ambulanceData));
+
+    // Check if the user is logged in
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+        Swal.fire({
+            title: 'Not Logged In!',
+            text: 'Please log in to your account to book an ambulance.',
+            icon: 'warning',
+            confirmButtonText: 'Log In'
+        }).then(() => {
+            // Redirect to login page
+            window.location.href = '/login2.html';
+        });
+    } else {
+        // If logged in, proceed with booking
+        window.location.href = `/ambulances/ambulanceform.html?id=${ambulanceId}&size=${ambulanceSize}`;
+    }
 }
+
+
+
 
 
 
